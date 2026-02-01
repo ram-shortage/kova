@@ -1,0 +1,29 @@
+{
+  "name": "kova",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "dev:api": "npm run dev --workspace=@kova/api",
+    "dev:web": "npm run dev --workspace=@kova/web",
+    "test:shared": "npm run test --workspace=@kova/shared",
+    "test:api": "npm run test --workspace=@kova/api",
+    "test:web": "npm run test --workspace=@kova/web",
+    "test:all": "npm run test:shared && npm run test:api && npm run test:web"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
